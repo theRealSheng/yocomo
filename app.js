@@ -10,6 +10,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
+const auth = require('./routes/auth/login');
 const index = require('./routes/index');
 const users = require('./routes/users');
 
@@ -37,9 +38,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-
 // Sessions
 
 app.use(session({
@@ -59,6 +57,10 @@ app.use((req, res, next) => {
   app.locals.user = req.session.currentUser;
   next();
 });
+
+app.use('/', index);
+app.use('/users', users);
+app.use('/auth', auth);
 
 // 404 Error handler
 app.use((req, res, next) => {
