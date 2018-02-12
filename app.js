@@ -12,6 +12,7 @@ const MongoStore = require('connect-mongo')(session);
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const offers = require('./routes/offers');
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use((req, res, next) => {
 // routes
 app.use('/', index);
 app.use('/auth', auth);
+app.use('/', offers);
 
 // 404 Error handler
 app.use((req, res, next) => {
