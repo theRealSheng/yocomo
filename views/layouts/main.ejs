@@ -8,7 +8,43 @@
 </head>
 <body>
 
-  <%- body%>
+  <% if (user && user.role === "BUYER") { %>
+    <header class="header-like">
+      <img src="#" alt="company-logo">
+    </header>
+
+    <nav class="nav-container">
+      <div class="nav-tabs">
+        <a href="/offers">Offers</a>
+      </div>
+      <div class="nav-tabs">
+       <a href="/coupons">My coupons</a>
+      </div>
+      <div class="nav-tabs">
+        <a href="/review">My reviews</a>
+      </div>
+    </nav>
+  <% }; %>
+
+  <% if (user && user.role === "RESTAURANT") { %>
+    <header class="header-like">
+      <img src="#" alt="company-logo">
+    </header>
   
+    <nav class="nav-container">
+      <div class="nav-tabs">
+        <a href="/offers">Offers</a>
+      </div>
+      <div class="nav-tabs">
+        <a href="/coupons">My Offers</a>
+      </div>
+      <div class="nav-tabs">
+        <a href="/review">My reviews</a>
+      </div>
+    </nav>
+  <% } %>
+
+  <%- body%>
+
 </body>
 </html>
