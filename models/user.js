@@ -8,7 +8,10 @@ const UserSchema = new Schema({
   username: String,
   password: String,
   email: String,
-  role: ['BUYER', 'RESTAURANT']
+  role: {
+    type: String,
+    enum: ['BUYER', 'RESTAURANT']
+  }
 });
 
 const User = mongoose.model('User', UserSchema);
