@@ -1,0 +1,30 @@
+
+<h1>Sign up </h1>
+
+<div>
+<a href="/auth/login">Already Member? Login</a>
+</div>
+
+<form action="/auth/signup" method="POST">
+  <div class="field">
+    <label for="username"> Username </label>
+    <input type="text" name="username" id="username" required>
+  </div>
+  <div class="field">
+    <label for="email"> Email </label>
+    <input type="email" name="email" id="email" required>
+  </div>
+  <div class="field">
+    <label for="password"> Password </label>
+    <input type="password" name="password" id="password" required>
+  </div>
+  <div class="field">
+    <label for="role"> Are you a restaurant? Please check box </label>
+    <input type="checkbox" name="role" id="role">
+  </div>
+
+  <div class="field control">
+    <button class="btn submit">Signup</button>
+  </div>
+</form>
+

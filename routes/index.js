@@ -4,17 +4,12 @@
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('signup-user');
+  res.render('index');
 });
 
-// router.post('/signup-user', (req, res, next) => {
-//   const data = {
-//     username: req.body.username,
-//     password: req.body.password
-//   };
-
-// });
+router.get('/profile', (req, res, next) => {
+  res.render('profile');
+});
 
 module.exports = router;

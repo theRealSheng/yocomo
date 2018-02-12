@@ -3,14 +3,20 @@
 
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const ObjectId = Schema.Types.ObjectId;
 
 const CouponSchema = new Schema({
-  userId: String, // Check how to link to User ID
-  restaurantId: String, // Check how to link to Merchant ID
+  user: {
+    type: ObjectId,
+    ref: 'User'
+  },
   status: Boolean,
-  review: String
+  review: String,
+  restaurant: {
+    type: ObjectId,
+    ref: 'Restaurant'
+  }
 });
 
 const Coupon = mongoose.model('Coupon', CouponSchema);
-
 module.exports = Coupon;
