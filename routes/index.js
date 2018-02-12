@@ -9,9 +9,9 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get('/profile', (req, res, next) => {
+router.get('/offers', (req, res, next) => {
   user.findById(user._id).then((user) => {
-    res.render('profile');
+    res.render('offers');
   }).catch(next);
 });
 
