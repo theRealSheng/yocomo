@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <% if (user && user.role === "BUYER") { %>
+  <% if (user && user.role === "BUYER") { console.log(user.role) %>
     <header class="header-like">
       <img src="#" alt="company-logo">
     </header>
@@ -36,10 +36,10 @@
         <a href="/offers">Offers</a>
       </div>
       <div class="nav-tabs">
-        <a href="/coupons">My Offers</a>
+        <a href="/create-offer">My Offers</a>
       </div>
       <div class="nav-tabs">
-        <a href="/review">My reviews</a>
+        <a href="/review-restaurant">My reviews</a>
       </div>
     </nav>
   <% } %>

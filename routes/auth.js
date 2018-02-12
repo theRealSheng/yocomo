@@ -80,7 +80,7 @@ router.post('/signup', (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
   const email = req.body.email;
-  const role = req.body.role ? 'MERCHANT' : 'BUYER';
+  const role = req.body.role ? 'RESTAURANT' : 'BUYER';
 
   // validate
   // if (username === '' || password === '' || password.length < 5 || !password.match(/[A-Z]/)) {
