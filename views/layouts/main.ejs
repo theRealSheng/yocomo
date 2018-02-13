@@ -16,20 +16,16 @@
         <div class="row">
             <%  if (!user){ %>
               <div class="col-6">
-                <a href="/auth/login">
-                  <div class="login">Login</div>
-                </a> 
-              </div>   
+                  <div class="menu-item">
+                    <a href="/auth/signup" >Signup</a>
+                  </div>
+                </div>
               <div class="col-6">
-                  <a href="/auth/signup">
-                    <div class="login">Signup</div>
-                  </a> 
-                </div>   
-                 
-              
-             
-              
-            <% } %>
+                  <div class="menu-item">
+                    <a href="/auth/login" >Login</a>
+                  </div>
+                </div>
+                 <% } %>
           
         <% if (user){ %> 
           <div class="col-3">
