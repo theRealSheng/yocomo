@@ -25,6 +25,29 @@
 
 </form>
 
+
 <!-- here goes the list of my offers -->
+
+<div class="offer-wrapper">
+  <% offers.forEach((offer)=> { %>
+    <div class="offer-single">
+      <h4>
+        <%= offer.name %>
+      </h4>
+      <p>
+        Deal:
+        <%= offer.dealname %>
+      </p>
+      <p>
+        Price:
+        <%= offer.price %>
+      </p>
+      <p>
+        Quantity left:
+        <%= offer.quantity %>
+      </p>
+    </div>
+    <% }); %>
+</div>
 
 <script src="/javascripts/create-offer.js"></script>
