@@ -13,9 +13,32 @@ html {
  
   color: black;
 }
+.row{
+  border: 1px solid black;
+}
+.login{
+  text-align: center;
+  background: red;
+  width: 80%;
+  height: 8vh;
+  margin:1vh auto;
+  padding-top: 2vh;
+  border-radius: 10px;
+  color: black;
+  text-decoration: none;
+}
 .menu-item a:link{
 
   color: black;
+}
+.title-div{
+  font-size: 2em;
+  margin:auto;
+  
+}
+.row{
+  height: 10vh;
+
 }
 /* body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
