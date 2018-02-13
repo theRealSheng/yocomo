@@ -8,39 +8,80 @@
   <title>Do Tasty!</title>
 </head>
 <body>
-    
-    <nav class="nav-container">
-      <div class="wrap-menu">
-          
-        <div class="nav-tabs">
-          <a href="/offers">Offers</a>
-        </div>
+      <div class="bg-primary white">
+        <div class="row">
+            <%  if (!user){ %>
+              <div class="col-2">
+                  <a href="/auth/login">
+                    <div class="menu-item-logsign"></div>
+                  </a>
+              </div>  
+              <div class="col-2">
+                  <a href="/auth/signup">
+                    <div class="menu-item-logsign"></div>
+                  </a>
+              </div>
+              <div class="col-2"></div>
+             
+              
+            <% } %>
+          <div class="col-3">
+            <div class="menu-item">
+              <a href="/offers">Offers</a>
+            </div>
+          </div>
         <% if (user){ %> 
-        <div class="nav-tabs">
           <% if (user.role === "BUYER"){ %>
-            <a href="/coupons">My coupons</a>
+          <div class="col-3">
+              <div class="menu-item">
+               <a href="/coupons">My coupons</a>
+              </div>
+          </div>
           <% }else { %>
-            <a href="/my-offers">My Offers</a>
+          <div class="col-3">
+              <div class="menu-item">
+               <a href="/my-offers">My Offers</a>
+              </div>
+          </div>
           <% } %>
-        </div>
-        <div class="nav-tabs">
+          
+        
           <% if (user.role === "BUYER"){ %>
-            <a href="/review">My reviews</a>
+          <div class="col-3">
+              <div class="menu-item">
+                <a href="/review">My reviews</a>
+              </div>
+          </div>
           <% }else { %>
-          <a href="/review-restaurant">My reviews</a>
+          <div class="col-3">
+              <div class="menu-item">
+                 <a href="/review-restaurant">My reviews</a>
+              </div>
+          </div>
           <% } %>
-        </div>
+          
+          
       <% } %>
-    </div>
+    
         <% if (user) { %>
-    <div class="logout-container">
-          <form method="post" action="/auth/logout">
-            <button class="btn-logout">Logout</button>
-          </form>
+          <div class="col-3">
+              <div class="menu-item">
+                <form method="post" action="/auth/logout">
+                  <button class="btn-logout">Logout</button>
+                </form>
+              </div>
+        </div>
+          
+          <% }else { %>
+            <div class="col-3"></div>
+            
+         
+            
+            
           <% } %>
-    </div>
-    </nav>
-   
+          </div>
+         </div>
+        </div>
 
 
   <%- body%>

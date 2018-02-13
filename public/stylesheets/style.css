@@ -9,7 +9,14 @@ html {
 }
 
 /* ---- typography ---- */
+.menu-item-logsign a:link{
+ 
+  color: black;
+}
+.menu-item a:link{
 
+  color: black;
+}
 /* body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: rgb(175, 173, 173);
@@ -40,6 +47,35 @@ h3 {}
 
 
 /* ---- layout ---- */
+.col-3{
+  
+  border-bottom: 1px solid black;
+}
+.col-2{
+  
+  border-bottom: 1px solid black;
+}
+
+.menu-item{
+  background: gray;
+  width: 15vw;
+  height: 7vh;
+  margin: auto;
+  text-align:center;
+  padding-top: 2vh;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 5px;
+}
+.menu-item-logsign{
+  background: rgb(255, 230, 0);
+  width: 8vw;
+  height: 4vh;
+  margin: auto;
+  margin-top: 2vh;
+  padding-left: 2vw;
+  margin-left: 1vw;
+  
+}
 /* .main-title{
   width: 10vw;
   height: 4vh;
