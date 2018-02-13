@@ -19,7 +19,7 @@ router.post('/getcoupon/:id', (req, res, next) => {
       user: req.session.currentUser._id,
       status: false,
       review: '',
-      restaurant: offer.restaurant,
+      restaurant: offer.name,
       offerId: offer._id
     });
 
