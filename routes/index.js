@@ -33,27 +33,11 @@ router.post('/my-offers', (req, res, next) => {
         price: price,
         quantity: quantity
       });
-      console.log(user);
 
       newOffer.save().then((offer) => {
-        console.log(offer);
         res.redirect('/offers');
       });
     }).catch(next);
 });
-
-//   const newOffer = new Offer({
-//     name: promise,
-//     restaurant: User._id,
-//     dealname: deal,
-//     price: price,
-//     quantity: quantity
-//   });
-
-//   newOffer.save().then((offer) => {
-//     console.log(offer);
-//     res.redirect('/offers');
-//   }).catch(next);
-// });
 
 module.exports = router;
