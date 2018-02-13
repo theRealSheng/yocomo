@@ -7,7 +7,10 @@ const User = require('../models/user');
 const Offer = require('../models/offer');
 
 router.get('/my-offers', (req, res, next) => {
-  res.render('forms/my-offers');
+  Offer.find({ restaurant: req.session.currentUser._id })
+    .then((offers) => {
+      res.render('forms/my-offers', { offers });
+    });
 });
 
 router.get('/offers', (req, res, next) => {
@@ -40,8 +43,16 @@ router.post('/my-offers', (req, res, next) => {
     }).catch(next);
 });
 
-router.get('/offers', (rreq, res, next) => {
+router.get('/offers', (req, res, next) => {
   res.send('offers');
 });
+
+// router.get('/my-offers', (req, res, next) => {
+//   Offer.find({ restaurant: req.session.currentUser._id })
+//     .then((offers) => {
+//       console.log(`my data ${offers}`);
+//       res.send('offers');
+//     });
+// });
 
 module.exports = router;
