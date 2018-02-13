@@ -7,42 +7,41 @@
   <title>Do Tasty!</title>
 </head>
 <body>
-
-  <% if (user && user.role === "BUYER") { console.log(user.role) %>
-    <header class="header-like">
-      <img src="#" alt="company-logo">
-    </header>
-
+    
     <nav class="nav-container">
-      <div class="nav-tabs">
-        <a href="/offers">Offers</a>
-      </div>
-      <div class="nav-tabs">
-       <a href="/coupons">My coupons</a>
-      </div>
-      <div class="nav-tabs">
-        <a href="/review">My reviews</a>
-      </div>
+      <div class="wrap-menu">
+          
+        <div class="nav-tabs">
+          <a href="/offers">Offers</a>
+        </div>
+        <% if (user){ %> 
+        <div class="nav-tabs">
+       
+          <% if (user.role === "BUYER"){ %>
+            <a href="/coupons">My coupons</a>
+          <% }else { %>
+            <a href="/create-offer">My Offers</a>
+          <% } %>
+        </div>
+        <div class="nav-tabs">
+          <% if (user.role === "BUYER"){ %>
+            <a href="/review">My reviews</a>
+          <% }else { %>
+          <a href="/review-restaurant">My reviews</a>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+        <% if (user) { %>
+    <div class="logout-container">
+          <form method="post" action="/auth/logout">
+            <button class="btn-logout">Logout</button>
+          </form>
+          <% } %>
+    </div>
     </nav>
-  <% }; %>
+   
 
-  <% if (user && user.role === "RESTAURANT") { %>
-    <header class="header-like">
-      <img src="#" alt="company-logo">
-    </header>
-  
-    <nav class="nav-container">
-      <div class="nav-tabs">
-        <a href="/offers">Offers</a>
-      </div>
-      <div class="nav-tabs">
-        <a href="/create-offer">My Offers</a>
-      </div>
-      <div class="nav-tabs">
-        <a href="/review-restaurant">My reviews</a>
-      </div>
-    </nav>
-  <% } %>
 
   <%- body%>
 

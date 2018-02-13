@@ -121,10 +121,10 @@ router.post('/signup', (req, res, next) => {
   });
 });
 
-// /* handle the POST from the logout button. */
-// router.post('/logout', (req, res, next) => {
-//   req.session.currentUser = null;
-//   res.redirect('/');
-// });
+/* handle the POST from the logout button. */
+router.post('/logout', (req, res, next) => {
+  req.session.currentUser = null;
+  res.redirect('/');
+});
 
 module.exports = router;

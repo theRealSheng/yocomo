@@ -11,21 +11,124 @@ html {
 /* ---- typography ---- */
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: red;
+  background-color: rgb(175, 173, 173);
+  padding: 0;
+  margin: 0;
 }
 
-h1 {}
-
+h1 {
+  font-size: 20px;
+}
+.welcome{
+  font-size: 3vw;
+  font-weight: bolder;
+  text-align: center;
+  margin-top: 20vh;
+}
 h2 {}
 
 h3 {}
+
+a{
+  color: rgb(0, 3, 41);;
+  text-decoration: none;
+
+}
 
 
 
 
 /* ---- layout ---- */
+.main-title{
+  width: 10vw;
+  height: 4vh;
+  background: rgba(0, 52, 221, 0.459);
+  margin:-4vh auto 0vh 5vw;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 1vh;
+  border: 2px solid rgb(0, 3, 41);
+  border-bottom: none;
+  font-size: 1vw;
+  
+}
+.main-container{
+  width: 20vw;
+  height: 20vh;
+  background: rgba(0, 52, 221, 0.459);
+  margin:auto 0vw auto 0vw;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 3, 41);
+  display: flex;
+  flex-direction: column;
+}
+
+.log-sign{
+  width: 15vw;
+  height: 4vh;
+  background: rgb(50, 98, 255);
+  margin: auto;
+  text-align: center;
+  padding-top: 0.2vh;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 3, 41);
+  font-size: 1.5vw;
+  
+}
+
+.log-sign:hover{
+  background: rgba(0, 3, 41, 0.466);;
+  cursor: pointer;
+ 
+}
+
+.nav-tabs{
+  width: 10vw;
+  height: 6vh;
+  background: rgb(175, 173, 173);
+  margin-left: 5vw;
+  margin: auto;
+  margin-bottom: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-align: center;
+  padding: 2vh;
+  font-size: 1.2vw;
+  font-weight: bolder;
+}
+.nav-tabs:hover{
+  background: rgba(255, 255, 255, 0.459);
+}
+
+.logout-container{
+  width: 10vw;
+  height: 8vh;
+  background: rgb(128, 115, 0);
+  margin-left: -10vw;
+  display: flex;
+  
+}
+
+.nav-container{
+  width: 100vw;
+  height: 8vh;
+  background:  rgb(50, 98, 255);;
+  display: flex;
+  flex-direction: row;
+
+  
+}
+
+.wrap-menu{
+  width: 60vw;
+  height: 8vh;
+  margin: auto;
+  background:  rgb(50, 98, 255);;
+  display: flex;
+  flex-direction: row;
+}
 
 #site-header {}
 
@@ -37,3 +140,20 @@ h3 {}
 
 
 /* ---- components ---- */
+
+.btn-logout{
+  height: 8vh;
+  width: 10vw;
+  border-radius: 5px;
+  border: none;
+  padding: 0;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  background: rgb(2, 12, 160);
+  font-size: 1.5vw;
+ 
+  
+}
+.btn-logout:hover{
+  background: rgb(1, 26, 109);
+}
