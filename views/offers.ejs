@@ -1,6 +1,20 @@
 <h1>Offers</h1>
 
-<div class="offer-container">
-<% console.log(offers) %>
+<div class="offer-wrapper">
+<% offers.forEach((offer)=> { %>
+  <div class="offer-single">
+    <h4> 
+      <%= offer.name %>
+    </h4>
+    <p>
+      <%= offer.dealname %></p>
+    <p>
+      <%= offer.price %>
+    </p>
+    <p>
+      Quantity left: <%= offer.quantity %>
+    </p>
+  </div>
+<% }); %>
 </div>
   
