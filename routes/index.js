@@ -11,8 +11,11 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/offers', (req, res, next) => {
-  user.findById(user._id).then((user) => {
-    res.render('offers');
+  Offer.find({}).then((offers) => {
+    const data = {
+      offers
+    };
+    res.render('offers', data);
   }).catch(next);
 });
 
@@ -22,13 +25,14 @@ router.post('/my-offers', (req, res, next) => {
   const quantity = req.body.quantity;
 
   const newOffer = new Offer({
-    user: user._id,
+    restaurant: user._id,
     name: deal,
     price: price,
     quantity: quantity
   });
 
-  newOffer.create().then(() => {
+  newOffer.save().then((offer) => {
+    console.log(offer);
     res.redirect('/offers');
   }).catch(next);
 });
