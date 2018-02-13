@@ -15,6 +15,10 @@ const CouponSchema = new Schema({
   restaurant: {
     type: ObjectId,
     ref: 'Restaurant'
+  },
+  offerId: {
+    type: ObjectId,
+    ref: 'Offer'
   }
 });
 

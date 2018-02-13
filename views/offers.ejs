@@ -15,7 +15,9 @@
       Quantity left: <%= offer.quantity %>
     </p>
   </div>
-  <input type="submit" value="Buy" style="border: 1px red solid">
+  <form action="/getcoupon/<%= offer._id%>" method="post">
+  <input name="buy" type="submit" value="Buy" style="border: 1px red solid">
+  </form>
 <% }); %>
 
 </div>
