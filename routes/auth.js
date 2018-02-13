@@ -79,6 +79,7 @@ router.post('/signup', (req, res, next) => {
 
   const username = req.body.username;
   const password = req.body.password;
+  const name = req.body.name;
   const email = req.body.email;
   const role = req.body.role ? 'RESTAURANT' : 'BUYER';
 
@@ -107,6 +108,7 @@ router.post('/signup', (req, res, next) => {
     const newUser = new User({
       username,
       password: hashPass,
+      name,
       email,
       role
     });

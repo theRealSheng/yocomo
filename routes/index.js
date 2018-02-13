@@ -3,7 +3,7 @@
 
 const express = require('express');
 const router = express.Router();
-const user = require('../models/user');
+const User = require('../models/user');
 const Offer = require('../models/offer');
 
 router.get('/', (req, res, next) => {
@@ -24,17 +24,36 @@ router.post('/my-offers', (req, res, next) => {
   const price = req.body.price;
   const quantity = req.body.quantity;
 
-  const newOffer = new Offer({
-    restaurant: user._id,
-    name: deal,
-    price: price,
-    quantity: quantity
-  });
+  User.findById(req.session.currentUser._id)
+    .then((user) => {
+      const newOffer = new Offer({
+        name: user.name,
+        restaurant: user._id,
+        dealname: deal,
+        price: price,
+        quantity: quantity
+      });
+      console.log(user);
 
-  newOffer.save().then((offer) => {
-    console.log(offer);
-    res.redirect('/offers');
-  }).catch(next);
+      newOffer.save().then((offer) => {
+        console.log(offer);
+        res.redirect('/offers');
+      });
+    }).catch(next);
 });
+
+//   const newOffer = new Offer({
+//     name: promise,
+//     restaurant: User._id,
+//     dealname: deal,
+//     price: price,
+//     quantity: quantity
+//   });
+
+//   newOffer.save().then((offer) => {
+//     console.log(offer);
+//     res.redirect('/offers');
+//   }).catch(next);
+// });
 
 module.exports = router;

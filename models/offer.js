@@ -6,11 +6,12 @@ const Schema = mongoose.Schema;
 const ObjectId = Schema.Types.ObjectId;
 
 const OfferSchema = new Schema({
+  name: String,
   restaurant: {
     type: ObjectId,
     ref: 'User'
   },
-  name: String,
+  dealname: String,
   price: Number,
   quantity: Number
 });
