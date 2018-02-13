@@ -11,7 +11,6 @@ const OfferSchema = new Schema({
     ref: 'User'
   },
   name: String,
-  password: String,
   price: Number,
   quantity: Number
 });
