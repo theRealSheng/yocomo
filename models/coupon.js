@@ -23,7 +23,8 @@ const CouponSchema = new Schema({
   },
   price: Number,
   dealname: String,
-  quantity: Number
+  quantity: Number,
+  couponId: String
 });
 
 const Coupon = mongoose.model('Coupon', CouponSchema);

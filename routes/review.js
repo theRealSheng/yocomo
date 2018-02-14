@@ -23,6 +23,7 @@ router.post('/review', (req, res, next) => {
       // Coupon only gets the first coupon?
 
       const newReview = new Review({
+        couponId: coupon[0]._id,
         offerId: coupon[0].offerId,
         restaurantId: coupon[0].restaurantId,
         rate: rate,
