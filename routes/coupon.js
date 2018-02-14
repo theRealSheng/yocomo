@@ -24,7 +24,7 @@ router.post('/getcoupon/:id', (req, res, next) => {
       offerId: offer._id,
       price: offer.price,
       dealname: offer.dealname,
-      quantity: offer.quantity - 1
+      quantity: 1
     });
 
     newCoupon.save().then((coupon) => {
