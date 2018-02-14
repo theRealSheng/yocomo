@@ -53,6 +53,28 @@ html {
   margin:auto;
   
 }
+table{
+  border: 1px solid black;
+  margin: 5vh auto 0vh;
+  width: 60vw;
+}
+ table td:last-child{
+  text-align: right;
+  width: 30vw;
+}
+.button-div{
+  border: 1px solid black;
+  width: 20vw;
+  text-align: center;
+  margin: 3vh auto;
+  
+}
+.title-pages{
+  font-size: 2em;
+  font-weight: bolder;
+  text-decoration: underline;
+  text-align: center;
+}
 .row{
   height: 10vh;
 }
@@ -86,6 +108,18 @@ h3 {}
 
 
 /* ---- layout ---- */
+
+.offers-container{
+  width: 80vw;
+  height: 30vh;
+  border: 1px solid black;
+  margin: 5vh auto;
+}
+.rest-name{
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
 .col-3{
   
   
