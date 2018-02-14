@@ -1,34 +1,30 @@
 
-<h1>Sign up </h1>
+<div class="container">
+  <div class="main-signuplogin">
+    <h1> SIGNUP </h1>
+    <form action="/auth/signup" method="POST">
+      <div class="form-group">
+        <label for="username"> Username </label>
+        <input type="text" class="form-control" name="username" id="username" required>
+      </div>
+      <div class="form-group">
+        <label for="email"> Email </label>
+        <input type="email" class="form-control" name="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="name"> Name </label>
+        <input type="name" class="form-control" name="name" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="password"> Password </label>
+        <input type="password" class="form-control" name="password" id="password" required>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" value="">Are you a Restaurant?</label>
+      </div>
 
-<div>
-<a href="/auth/login">Already Member? Login</a>
-</div>
-
-<form action="/auth/signup" method="POST">
-  <div class="field">
-    <label for="username"> Username </label>
-    <input type="text" name="username" id="username" required>
-  </div>
-  <div class="field">
-    <label for="email"> Email </label>
-    <input type="email" name="email" id="email" required>
-  </div>
-  <div class="field">
-    <label for="name"> Name </label>
-    <input type="name" name="name" id="name" required>
-  </div>
-  <div class="field">
-    <label for="password"> Password </label>
-    <input type="password" name="password" id="password" required>
-  </div>
-  <div class="field">
-    <label for="role"> Are you a restaurant? Please check box </label>
-    <input type="checkbox" name="role" id="role">
-  </div>
-
-  <div class="field control">
-    <button class="btn submit">Signup</button>
-  </div>
-</form>
+      <div class="form-check">
+        <button class="btn submit">Signup</button>
+      </div>
+    </form>
 

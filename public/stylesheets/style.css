@@ -16,14 +16,15 @@ html {
 }
 .main-signuplogin{
   background: rgb(230, 230, 230);
-  width: 50vw;
-  height: 50vh;
+  width: 80vw;
+  
   text-align: center;
-  margin:15vh auto;
+  margin:8vh auto;
   border-radius: 10px;
   padding: 10px;
   border: 1px solid black;
 }
+
 .menu-item-logsign a:link{
  
   color: black;
@@ -140,7 +141,7 @@ a:hover:before, .btn-logout:hover:before {
  }
 
 .menu-item-logsign{
-  background: rgb(255, 230, 0);
+  background: rgb(0, 255, 55);
   width: 8vw;
   height: 4vh;
   margin: auto;
