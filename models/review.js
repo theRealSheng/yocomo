@@ -14,8 +14,13 @@ const ReviewSchema = new Schema({
     type: ObjectId,
     ref: 'Offer'
   },
+  rate: Number,
   comment: String,
-  rate: Number
+  name: String,
+  userId: {
+    type: ObjectId,
+    ref: 'User'
+  }
 });
 
 const Review = mongoose.model('Review', ReviewSchema);
