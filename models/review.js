@@ -8,11 +8,11 @@ const ObjectId = Schema.Types.ObjectId;
 const ReviewSchema = new Schema({
   offerId: {
     type: ObjectId,
-    ref: 'Offer'
+    ref: 'Coupon'
   },
   restaurantId: {
     type: ObjectId,
-    ref: 'Offer'
+    ref: 'Coupon'
   },
   rate: Number,
   comment: String,
