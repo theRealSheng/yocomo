@@ -8,7 +8,7 @@ const offer = require('../models/offer');
 const Review = require('../models/review');
 
 router.get('/review', (req, res, next) => {
-  Review.findById(req.session.currentUser._id)
+  Review.find({ userID: req.session.currentUser._id })
     .then(reviews => {
       console.log(reviews);
       res.render('review', { reviews });
