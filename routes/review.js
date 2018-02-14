@@ -4,7 +4,6 @@
 const express = require('express');
 const router = express.Router();
 const coupon = require('../models/coupon');
-const user = require('../models/user');
 const offer = require('../models/offer');
 const Review = require('../models/review');
 
