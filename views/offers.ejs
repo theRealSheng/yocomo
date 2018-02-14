@@ -21,12 +21,13 @@
         </tbody>
         </table> 
     </div>
+    <% if (user.role === "BUYER"){ %>
       <div class="button-div">
         <form action="/getcoupon/<%= offer._id%>" method="post">
-          <input name="buy" class=" btn btn-warning" type="submit" value="Buy">
+          <input name="buy" class=" btn btn-warning" type="submit" value="Buy Offer">
           </form>
       </div>
-      
+    <% } %>
 </div>
 <% }); %>
 

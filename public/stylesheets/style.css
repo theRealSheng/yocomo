@@ -54,7 +54,7 @@ html {
   
 }
 table{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 5vh auto 0vh;
   width: 60vw;
 }
@@ -63,10 +63,11 @@ table{
   width: 30vw;
 }
 .button-div{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 20vw;
   text-align: center;
   margin: 3vh auto;
+  
   
 }
 .title-pages{
@@ -78,12 +79,13 @@ table{
 .row{
   height: 10vh;
 }
-/* body {
+ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: rgb(175, 173, 173);
+  background-color: rgb(224, 224, 224)!important;
   padding: 0;
   margin: 0;
 }
+/*
 
 h1 {
   font-size: 20px;
@@ -114,11 +116,15 @@ h3 {}
   height: 30vh;
   border: 1px solid black;
   margin: 5vh auto;
+  border-radius: 5px;
+  background: #fcecb9;
 }
 .rest-name{
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: #f0ad4e;
 }
 .col-3{
   

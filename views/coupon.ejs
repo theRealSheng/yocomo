@@ -1,10 +1,10 @@
 
-<h1>My coupons</h1>
+<p class="title-pages">My Coupons</p>
 
 <% coupons.forEach(coupon => { %>
-  <div class="coupon-single">
+  <div class ="offers-container">
     <h4>
-      <%= coupon.name %>
+      <div class="rest-name"><%= coupon.name %></div>
     </h4>
     <p>
       Deal:
@@ -27,7 +27,7 @@
       <% } %>
     </p>
     <button id="review-btn">+ Add Review</button>
-
+  </div>
     <form id="review-container" style="display:none" action="/review" method="post">
       <div>
         <label for="rate">Rate from 1 to 5:</label>
