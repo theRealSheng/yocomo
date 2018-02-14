@@ -33,4 +33,8 @@ router.post('/getcoupon/:id', (req, res, next) => {
   }).catch(next);
 });
 
+router.post('/review', (req, res, next) => {
+  res.redirect('/review');
+});
+
 module.exports = router;

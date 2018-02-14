@@ -18,5 +18,16 @@
       Quantity bought:
       <%= coupon.quantity %>
     </p>
+    <p>
+      Coupon status:
+      <% if (!coupon.status) { %>
+      Not used
+      <% } else { %> 
+      Used
+      <% } %>
+    </p>
+    <form action="/review" method="post">
+    <input type="submit" value="Make Review">
+    </form>
   </div>
 <% }) %>

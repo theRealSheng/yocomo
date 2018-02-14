@@ -14,7 +14,7 @@ const index = require('./routes/index');
 const auth = require('./routes/auth');
 const offers = require('./routes/offers');
 const coupons = require('./routes/coupon');
-
+const reviews = require('./routes/review');
 const app = express();
 
 // set databse
@@ -64,6 +64,7 @@ app.use('/', index);
 app.use('/auth', auth);
 app.use('/', offers);
 app.use('/', coupons);
+app.use('/', reviews);
 
 // 404 Error handler
 app.use((req, res, next) => {
