@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const coupon = require('../models/coupon');
-const User = require('../models/user');
+const user = require('../models/user');
 const offer = require('../models/offer');
 const Review = require('../models/review');
 
@@ -20,7 +20,7 @@ router.post('/review', (req, res, next) => {
   const rate = req.body.rate;
   const comment = req.body.comment;
 
-  User.findById(req.session.currentUser._id)
+  coupon.find({ userId: req.session.currentUser._id })
     .then((user) => {
       const newReview = new Review({
         offerId: coupon.offerId,
