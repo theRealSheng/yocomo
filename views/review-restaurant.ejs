@@ -1,0 +1,21 @@
+<h1>Reviews for Restaurant</h1>
+
+<% reviews.forEach(review => { %>
+  <div>
+    Coupon ID:
+    <%= review.couponId %>
+  </div>
+  <div>
+    Restaurant:
+    <%= review.name %>
+  </div>
+  <div>
+    User Rating:
+    <%= review.rate %>
+  </div>
+  <div>
+    User Comment:
+    <%= review.comment %>
+  </div>
+  <br>
+  <%});%>

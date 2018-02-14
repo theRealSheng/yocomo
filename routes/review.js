@@ -9,7 +9,6 @@ const Review = require('../models/review');
 router.get('/review', (req, res, next) => {
   Review.find({ userId: req.session.currentUser._id })
     .then(reviews => {
-      console.log(reviews);
       res.render('review', { reviews });
     });
 });
@@ -36,6 +35,14 @@ router.post('/review', (req, res, next) => {
         res.redirect('/review');
       });
     }).catch(next);
+});
+
+router.get('/review-restaurant', (req, res, next) => {
+  Review.find({ restaurantId: req.session.currentUser._id })
+    .then(reviews => {
+      console.log(reviews);
+      res.render('review-restaurant', { reviews });
+    });
 });
 
 module.exports = router;
