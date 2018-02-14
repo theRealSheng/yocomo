@@ -30,7 +30,7 @@ router.post('/my-offers', (req, res, next) => {
   User.findById(req.session.currentUser._id)
     .then((user) => {
       const newOffer = new Offer({
-        name: user.name,
+        name: User.name,
         restaurant: user._id,
         dealname: deal,
         price: price,
@@ -46,13 +46,5 @@ router.post('/my-offers', (req, res, next) => {
 router.get('/offers', (req, res, next) => {
   res.send('offers');
 });
-
-// router.get('/my-offers', (req, res, next) => {
-//   Offer.find({ restaurant: req.session.currentUser._id })
-//     .then((offers) => {
-//       console.log(`my data ${offers}`);
-//       res.send('offers');
-//     });
-// });
 
 module.exports = router;

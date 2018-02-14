@@ -2,5 +2,21 @@
 <h1>My coupons</h1>
 
 <% coupons.forEach(coupon => { %>
-  <%= coupon.restaurant %>
-<%});%>
+  <div class="coupon-single">
+    <h4>
+      <%= coupon.name %>
+    </h4>
+    <p>
+      Deal:
+      <%= coupon.dealname %>
+    </p>
+    <p>
+      Price:
+      <%= coupon.price %>
+    </p>
+    <p>
+      Quantity bought:
+      <%= coupon.quantity %>
+    </p>
+  </div>
+<% }) %>

@@ -19,8 +19,12 @@ router.post('/getcoupon/:id', (req, res, next) => {
       user: req.session.currentUser._id,
       status: false,
       review: '',
-      restaurant: offer.name,
-      offerId: offer._id
+      restaurantId: offer.restaurant,
+      name: offer.name,
+      offerId: offer._id,
+      price: offer.price,
+      dealname: offer.dealname,
+      quantity: offer.quantity - 1
     });
 
     newCoupon.save().then((coupon) => {

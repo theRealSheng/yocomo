@@ -12,14 +12,18 @@ const CouponSchema = new Schema({
   },
   status: Boolean,
   review: String,
-  restaurant: {
+  restaurantId: {
     type: ObjectId,
     ref: 'Restaurant'
   },
+  name: String,
   offerId: {
     type: ObjectId,
     ref: 'Offer'
-  }
+  },
+  price: Number,
+  dealname: String,
+  quantity: Number
 });
 
 const Coupon = mongoose.model('Coupon', CouponSchema);
