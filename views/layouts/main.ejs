@@ -9,82 +9,75 @@
   <title>Do Tasty!</title>
 </head>
 <body>
-      <div class="bg-warning white">
-        <div class="container">
-        <div class="row">
-          <div class="title-div">GO TASTY</div>
+  <div class="bg-warning white">
+    <div class="container">
+      <div class="row">
+        <div class="title-div">GO TASTY</div>
+      </div>
+      <div class="row">
+        <%  if (!user){ %>
+        <div class="col-6">
+          <div class="menu-item">
+            <a href="/auth/signup" >Signup</a>
+          </div>
         </div>
-        <div class="row">
-            <%  if (!user){ %>
-              <div class="col-6">
-                  <div class="menu-item">
-                    <a href="/auth/signup" >Signup</a>
-                  </div>
-                </div>
-              <div class="col-6">
-                  <div class="menu-item">
-                    <a href="/auth/login" >Login</a>
-                  </div>
-                </div>
-                 <% } %>
-          
+        <div class="col-6">
+          <div class="menu-item">
+            <a href="/auth/login" >Login</a>
+          </div>
+        </div>
+        <% } %>
         <% if (user){ %> 
-          <div class="col-3">
-              <div class="menu-item">
-                <a href="/offers">Offers</a>
-              </div>
-            </div>
-          <% if (user.role === "BUYER"){ %>
-          <div class="col-3">
-              <div class="menu-item">
-               <a href="/coupons">My coupons</a>
-              </div>
+        <div class="col-3">
+          <div class="menu-item">
+            <a href="/offers">Offers</a>
           </div>
-          <% }else { %>
-          <div class="col-3">
-              <div class="menu-item">
-               <a href="/my-offers">My Offers</a>
-              </div>
+        </div>
+        <% if (user.role === "BUYER"){ %>
+        <div class="col-3">
+          <div class="menu-item">
+            <a href="/coupons">My coupons</a>
           </div>
-          <% } %>
-          
-        
-          <% if (user.role === "BUYER"){ %>
-          <div class="col-3">
-              <div class="menu-item">
-                <a href="/review">My reviews</a>
-              </div>
+        </div>
+        <% }else { %>
+        <div class="col-3">
+          <div class="menu-item">
+            <a href="/my-offers">My Offers</a>
           </div>
-          <% }else { %>
-          <div class="col-3">
-              <div class="menu-item">
-                 <a href="/review-restaurant">My reviews</a>
-              </div>
+        </div>
+        <% } %>
+        <% if (user.role === "BUYER"){ %>
+        <div class="col-3">
+          <div class="menu-item">
+            <a href="/review">My reviews</a>
           </div>
-          <% } %>
-          
-          
-      <% } %>
-    
+        </div>
+        <% }else { %>
+        <div class="col-3">
+          <div class="menu-item">
+              <a href="/review-restaurant">My reviews</a>
+          </div>
+        </div>
+        <% } %>
+        <% } %>
         <% if (user) { %>
-          <div class="col-3">
-              <div class="menu-item">
-                <form method="post" action="/auth/logout">
-                  <button class="btn-logout">Logout</button>
-                </form>
-              </div>
-        </div>
-          
-          <% } %>
+        <div class="col-3">
+          <div class="menu-item">
+            <form method="post" action="/auth/logout">
+              <button class="btn-logout">Logout</button>
+            </form>
           </div>
-         </div>
-         </div>
+          </div>
+          <% } %>
         </div>
+      </div>
+    </div>
+  </div>
 
 
-  <%- body%>
+<%- body%>
 
-  <footer></footer>
+<footer></footer>
 
 </body>
 </html>

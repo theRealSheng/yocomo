@@ -2,9 +2,7 @@
 <div class="title-page-deg">   
   <p class="title-pages">My Dashboard</p>
 </div>
-
 <h2>My profile</h2>
-
 <div class="profile-pic">
   <% data.pictures.forEach((picture) => { %>
     <h3>
@@ -28,10 +26,10 @@
       <div class="rest-name"><%= coupon.name %></div>
         <div class="rest-info">
             <div class="offer-div">
-             <p> Deal:</p>
-             <p> Price:</p>
-             <p> Quantity:</p>
-             <p> Status:</p>
+              <p> Deal:</p>
+              <p> Price:</p>
+              <p> Quantity:</p>
+              <p> Status:</p>
             </div>
             <div class="result-div">
               <p><%= coupon.dealname %></p>
@@ -41,28 +39,11 @@
                 <% } else { %> 
                 <p>Used</p>
                 <% } %> 
-
             </div>
-            
-           
-           
-            
-            
-           
-           
-            
-             
-           
-           
-              
-              
-
-            
         </div>
    
     </p>
     <button id="review-btn" class="btn btn-warning review-btn" >+ Add Review</button>
-  
     <form id="review-container" style="display:none" action="/review" method="post">
       <div class="form-reviews">
       <div class="form-group">
