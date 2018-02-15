@@ -1,5 +1,4 @@
-
-<div class="title-page-deg">   
+<div class="title-page-deg">
   <p class="title-pages">My Dashboard</p>
 </div>
 <h2>My profile</h2>
@@ -22,46 +21,55 @@
 </section>
 
 <% coupons.forEach(coupon => { %>
-  <div class ="offers-container">
-      <div class="rest-name"><%= coupon.name %></div>
-        <div class="rest-info">
-            <div class="offer-div">
-              <p> Deal:</p>
-              <p> Price:</p>
-              <p> Quantity:</p>
-              <p> Status:</p>
-            </div>
-            <div class="result-div">
-              <p><%= coupon.dealname %></p>
-              <p><%= coupon.price + ' €'%></p>
-              <p><%= coupon.quantity + ' Coupons' %></p>
-              <p><% if (!coupon.status) { %> Not used</p>
-                <% } else { %> 
-                <p>Used</p>
-                <% } %> 
-            </div>
-        </div>
-   
+  <div class="offers-container">
+    <div class="rest-name">
+      <%= coupon.name %>
+    </div>
+    <div class="rest-info">
+      <div class="offer-div">
+        <p> Deal:</p>
+        <p> Price:</p>
+        <p> Quantity:</p>
+        <p> Status:</p>
+      </div>
+      <div class="result-div">
+        <p>
+          <%= coupon.dealname %>
+        </p>
+        <p>
+          <%= coupon.price + ' €'%>
+        </p>
+        <p>
+          <%= coupon.quantity + ' Coupons' %>
+        </p>
+        <p>
+          <% if (!coupon.status) { %> Not used</p>
+        <% } else { %>
+          <p>Used</p>
+          <% } %>
+      </div>
+    </div>
+
     </p>
-    <button id="review-btn" class="btn btn-warning review-btn" >+ Add Review</button>
+    <button id="review-btn" class="btn btn-warning review-btn">+ Add Review</button>
     <form id="review-container" style="display:none" action="/review" method="post">
       <div class="form-reviews">
-      <div class="form-group">
-        <label for="rate">Rate from 1 to 5:</label>
-        <input type="number" name="rate" min="0" max="5" required>
+        <div class="form-group">
+          <label for="rate">Rate from 1 to 5:</label>
+          <input type="number" name="rate" min="0" max="5" required>
+        </div>
       </div>
-    </div>
-    <div class="form-reviews">
-      <div class="form-group">
-        <label for="review-box">Please insert review in box below:</label>
-        <textarea name="comment" id="comment" class="form-control" cols="2" rows="2" required></textarea>
+      <div class="form-reviews">
+        <div class="form-group">
+          <label for="review-box">Please insert review in box below:</label>
+          <textarea name="comment" id="comment" class="form-control" cols="2" rows="2" required></textarea>
+        </div>
       </div>
-    </div>
       <div class="form-group">
-        <input type="submit" class=" btn btn-warning" value="Submit Review" >
+        <input type="submit" class=" btn btn-warning" value="Submit Review">
       </div>
     </form>
   </div>
-<% }) %>
+  <% }) %>
 
-<script src="/javascripts/create-review.js"></script>
+    <script src="/javascripts/create-review.js"></script>
