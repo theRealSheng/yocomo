@@ -2,6 +2,7 @@
   <p class="title-pages">My Dashboard</p>
 </div>
 <h2>My profile</h2>
+<div="container">
 <div class="container-profile">
   <div class="profile-pic">
     <% data.pictures.forEach((picture) => { %>
@@ -16,6 +17,7 @@
     <p>Email:  <%= user.email%> </p>
   </div>
 </div>
+</div>
 
 <section>
   <h2>Upload your photo</h2>
@@ -27,6 +29,7 @@
 </section>
 
 <% coupons.forEach(coupon => { %>
+ <div class="container">
   <div class="offers-container">
     <div class="rest-name">
       <%= coupon.name %>
@@ -71,6 +74,7 @@
       </div>
     </form>
   </div>
+</div>
 <% }); %>
 
 <script src="/javascripts/create-review.js"></script>

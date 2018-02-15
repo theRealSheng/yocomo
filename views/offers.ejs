@@ -2,6 +2,7 @@
 <p class="title-pages">Offers</p>
 </div>
 <% offers.forEach((offer)=> { %>
+<div class="container">
 <div class ="offers-container">
   <div class="rest-name"><%= offer.name %></div>
     <div class="rest-info">
@@ -25,6 +26,7 @@
       <% }else { %>
     
     <% }; %>
+</div>
 </div>
 <% }); %>
 
