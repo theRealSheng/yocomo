@@ -9,6 +9,7 @@ html {
 }
 
 /* ---- typography ---- */
+
 .welcome{
   margin-top: 20vh;
   text-align: center;
@@ -74,13 +75,13 @@ table{
   font-size: 2em;
   font-weight: bolder;
   text-decoration: underline;
-  text-align: center;
+  text-align: left;
 }
 .row{
   height: 10vh;
 }
  body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif!important;
   background-color: rgb(224, 224, 224)!important;
   padding: 0;
   margin: 0;
@@ -106,19 +107,6 @@ h3 {}
 
 } */
 
-
-
-
-/* ---- layout ---- */
-
-.offers-container{
-  width: 80vw;
-  
-  border: 1px solid black;
-  margin: 5vh auto;
-  border-radius: 5px;
-  background: #fcecb9;
-}
 .rest-name{
   text-align: center;
   font-size: 1.5em;
@@ -126,6 +114,49 @@ h3 {}
   text-decoration: underline;
   text-decoration-color: #f0ad4e;
 }
+p{
+  white-space: pre-line; 
+}
+
+.offers-container p{
+  margin: 0px;
+
+}
+
+/* ---- layout ---- */
+.offer-div{
+  width: 40vw;
+
+}
+.result-div{
+  width: 40vw;
+  /* border: 1px solid black; */
+  text-align: right;
+ 
+}
+.rest-info{
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  /* border: 1px solid black; */
+}
+.form-reviews{
+  margin: 0px 2vw 2vh 2vw;
+}
+.offers-container{
+  width: 80vw;
+  border: 1px solid black;
+  margin: 5vh auto;
+  border-radius: 5px;
+  background: #fcecb9;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2vh;
+  
+}
+
 .col-3{
   
   
@@ -143,10 +174,10 @@ h3 {}
   height: 8vh;
   text-align: center;
   padding-top: 2vh;
-  
-
+ }
+.only-padding-bottom{
+  padding-bottom: 2vh;
 }
-
 a{
   color: black!important;
 }
@@ -194,6 +225,14 @@ form{
 margin-bottom: 0!important;
 }
 
+.title-page-deg{
+  background: linear-gradient(to left, rgb(224, 224, 224) , #ffc107);
+ padding-left: 2vh;
+ width: 80vw;
+ margin: 5vh auto;
+ border-radius: 10px;
+}
+
 
 
 
@@ -216,4 +255,14 @@ margin-bottom: 0!important;
   background:NONE;
   margin-bottom: 6vh;
   cursor: pointer;
+}
+
+.review-btn{
+  margin: 2vh auto;
+
+}
+
+.review-btn2{
+  margin: 2vh auto;
+
 }
