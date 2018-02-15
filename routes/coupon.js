@@ -40,7 +40,7 @@ router.post('/getcoupon/:id', (req, res, next) => {
 
       return newCoupon.save();
     })
-    .then(() => Offer.updateOne({ _id: req.params.id }, { $inc: { quantity: -1 } }))
+    .then(() => Offer.update({ _id: req.params.id }, { $inc: { quantity: -1 } }))
     .then(() => res.redirect('/coupons'))
     .catch(next);
 });
