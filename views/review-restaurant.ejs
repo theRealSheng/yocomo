@@ -3,21 +3,24 @@
     </div>
 
 <% reviews.forEach(review => { %>
-  <div>
-    Coupon ID:
-    <%= review.couponId %>
+  <div class ="offers-container">
+      <div class="rest-name"></div>
+        <div class="rest-info">
+          <div class="offer-div">
+            <p>Coupon ID:</p>
+            <p>User:</p>
+            <p>User Rating:</p>
+            <p>User Comment:</p>
+          </div>
+          <div class="result-div">
+            <p>  <%= review.couponId %></p>
+            <p><%= review.name %></p>
+            <p><%= review.rate %></p>
+            <p><%= review.comment %></p>
+          </div>
+        </div>
   </div>
-  <div>
-    Restaurant:
-    <%= review.name %>
-  </div>
-  <div>
-    User Rating:
-    <%= review.rate %>
-  </div>
-  <div>
-    User Comment:
-    <%= review.comment %>
-  </div>
-  <br>
+</div>
+
+
   <%});%>

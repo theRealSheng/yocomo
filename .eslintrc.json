@@ -17,6 +17,8 @@
       "semi": [
         "error",
         "always"
-      ]
+      ],
+      "plugins": ["ejs", "css-modules"]
+    
     }
   }

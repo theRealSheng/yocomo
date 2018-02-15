@@ -46,7 +46,6 @@ html {
   text-decoration: none;
 }
 .menu-item a:link{
-
   color: black;
 }
 .title-div{
@@ -241,9 +240,6 @@ margin-bottom: 0!important;
 #site-footer {}
 
 #site-main {}
-
-
-
 
 /* ---- components ---- */
 
