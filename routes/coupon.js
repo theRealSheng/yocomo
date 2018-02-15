@@ -19,9 +19,7 @@ router.get('/coupons', (req, res, next) => {
         };
         res.render('coupon', { coupons, data });
       });
-    }).catch(err => {
-      return next(err);
-    });
+    }).catch(next);
 });
 
 router.post('/getcoupon/:id', (req, res, next) => {
@@ -58,17 +56,5 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
     return next(err);
   });
 });
-
-// router.get('/', (req, res, next) => {
-//   Picture.find({}).then(response => {
-//     const data = {
-//       pictures: response
-//     };
-
-//     res.render('index', data);
-//   }).catch(err => {
-//     return next(err);
-//   });
-// });
 
 module.exports = router;
