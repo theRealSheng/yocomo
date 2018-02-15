@@ -11,6 +11,14 @@ const Picture = require('../models/picture');
 const upload = multer({ dest: './public/uploads/' });
 
 router.get('/coupons', (req, res, next) => {
+  if (req.session.currentUser.role !== 'RESTAURANT') {
+    return res.redirect('/coupons');
+  }
+
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Coupon.find({ user: req.session.currentUser._id })
     .then((coupons) => {
       Picture.find({ userId: req.session.currentUser._id }).then(response => {
@@ -23,6 +31,14 @@ router.get('/coupons', (req, res, next) => {
 });
 
 router.post('/getcoupon/:id', (req, res, next) => {
+  if (req.session.currentUser.role !== 'RESTAURANT') {
+    return res.redirect('/coupons');
+  }
+
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Offer.findById(req.params.id)
     .then((offer) => {
       const newCoupon = new Coupon({
@@ -46,6 +62,10 @@ router.post('/getcoupon/:id', (req, res, next) => {
 });
 
 router.post('/upload', upload.single('photo'), (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,

@@ -8,6 +8,10 @@ const User = require('../models/user');
 const Offer = require('../models/offer');
 
 router.get('/offers', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Offer.find({}).then((offers) => {
     const data = {
       offers
@@ -17,6 +21,14 @@ router.get('/offers', (req, res, next) => {
 });
 
 router.get('/my-offers', (req, res, next) => {
+  if (req.session.currentUser.role !== 'BUYER') {
+    return res.redirect('/my-offers');
+  }
+
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Offer.find({ restaurant: req.session.currentUser._id })
     .then((offers) => {
       res.render('forms/my-offers', { offers });
@@ -24,6 +36,14 @@ router.get('/my-offers', (req, res, next) => {
 });
 
 router.post('/my-offers', (req, res, next) => {
+  if (req.session.currentUser.role !== 'BUYER') {
+    return res.redirect('/my-offers');
+  }
+
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   const deal = req.body.dealName;
   const price = req.body.price;
   const quantity = req.body.quantity;

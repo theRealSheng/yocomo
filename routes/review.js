@@ -8,6 +8,10 @@ const Coupon = require('../models/coupon');
 const Review = require('../models/review');
 
 router.get('/review', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Review.find({ userId: req.session.currentUser._id })
     .then(reviews => {
       res.render('review', { reviews });
@@ -15,6 +19,10 @@ router.get('/review', (req, res, next) => {
 });
 
 router.post('/review/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   const rate = req.body.rate;
   const comment = req.body.comment;
 
@@ -37,6 +45,10 @@ router.post('/review/:id', (req, res, next) => {
 });
 
 router.get('/review-restaurant', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   Review.find({ restaurantId: req.session.currentUser._id })
     .then(reviews => {
       console.log(reviews);

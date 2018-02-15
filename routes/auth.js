@@ -11,6 +11,10 @@ const bcryptSalt = 10;
 
 /* render the login form. */
 router.get('/login', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   if (req.session.currentUser) {
     return res.redirect('/offers');
   }
@@ -23,6 +27,10 @@ router.get('/login', (req, res, next) => {
 
 /* handle the POST from the login form. */
 router.post('/login', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   if (req.session.currentUser) {
     return res.redirect('/offers');
   }
@@ -39,6 +47,10 @@ router.post('/login', (req, res, next) => {
   }
 
   User.findOne({ 'username': username }, (err, user) => {
+    if (!req.session.currentUser) {
+      return res.redirect('/auth/login');
+    }
+
     if (err) {
       return next(err);
     }
@@ -65,6 +77,10 @@ router.post('/login', (req, res, next) => {
 
 /* render the signup form. */
 router.get('/signup', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   if (req.session.currentUser) {
     return res.redirect('/offers');
   }
@@ -73,6 +89,10 @@ router.get('/signup', (req, res, next) => {
 
 /* handle the POST from the signup form. */
 router.post('/signup', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
   if (req.session.currentUser) {
     return res.redirect('/offers');
   }
