@@ -9,7 +9,12 @@ html {
 }
 
 /* ---- typography ---- */
-
+h2{
+  margin-left: 6vh;
+}
+.copyright{
+  text-align: center;
+}
 .welcome{
   margin-top: 20vh;
   text-align: center;
@@ -130,6 +135,10 @@ p{
   flex-direction: column;
   padding-bottom: 2vh;
 }
+.offers-container:hover{
+  box-shadow:0px 0px 0px 2px black inset;
+  opacity: 0.2px;
+}
 .col-2{
   
   border-bottom: 1px solid black;
@@ -198,6 +207,27 @@ margin-bottom: 0!important;
  margin: 5vh auto;
  border-radius: 10px;
 }
+.profile-pic{
+  
+  height: 20vh;
+  width: 30vw;
+  margin-left: 10vw;
+  /* border: 1px solid black; */
+ }
+.container-profile{
+  display: flex;
+}
+.img-profile{
+  max-height: 100vh;
+  max-width: 100vw;
+}
+.info-dashboard{
+  /* border: 1px solid black; */
+  height: 17vh;
+  width: 55vw;
+  padding-top: 1vh;
+}
+
 /* ---- components ---- */
 
  .btn-logout{
