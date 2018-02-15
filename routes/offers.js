@@ -22,7 +22,7 @@ router.get('/offers', (req, res, next) => {
 router.get('/my-offers', (req, res, next) => {
   Offer.find({ restaurant: req.session.currentUser._id })
     .then((offers) => {
-      Picture.find({}).then(response => {
+      Picture.find({ userId: req.session.currentUser._id }).then(response => {
         const data = {
           pictures: response
         };
@@ -56,7 +56,8 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,
-    originalName: req.file.originalname
+    originalName: req.file.originalname,
+    userId: req.session.currentUser._id
   });
 
   pic.save().then(response => {

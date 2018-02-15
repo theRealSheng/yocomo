@@ -13,7 +13,7 @@ const upload = multer({ dest: './public/uploads/' });
 router.get('/coupons', (req, res, next) => {
   Coupon.find({ user: req.session.currentUser._id })
     .then((coupons) => {
-      Picture.find({}).then(response => {
+      Picture.find({ userId: req.session.currentUser._id }).then(response => {
         const data = {
           pictures: response
         };
@@ -47,7 +47,8 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,
-    originalName: req.file.originalname
+    originalName: req.file.originalname,
+    userId: req.session.currentUser._id
   });
 
   pic.save().then(response => {
