@@ -6,13 +6,6 @@ const router = express.Router();
 const User = require('../models/user');
 const Offer = require('../models/offer');
 
-router.get('/my-offers', (req, res, next) => {
-  Offer.find({ restaurant: req.session.currentUser._id })
-    .then((offers) => {
-      res.render('forms/my-offers', { offers });
-    });
-});
-
 router.get('/offers', (req, res, next) => {
   Offer.find({}).then((offers) => {
     const data = {
@@ -20,6 +13,13 @@ router.get('/offers', (req, res, next) => {
     };
     res.render('offers', data);
   }).catch(next);
+});
+
+router.get('/my-offers', (req, res, next) => {
+  Offer.find({ restaurant: req.session.currentUser._id })
+    .then((offers) => {
+      res.render('forms/my-offers', { offers });
+    });
 });
 
 router.post('/my-offers', (req, res, next) => {
@@ -41,10 +41,6 @@ router.post('/my-offers', (req, res, next) => {
         res.redirect('/offers');
       });
     }).catch(next);
-});
-
-router.get('/offers', (req, res, next) => {
-  res.send('offers');
 });
 
 module.exports = router;

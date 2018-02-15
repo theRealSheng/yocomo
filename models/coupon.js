@@ -14,7 +14,7 @@ const CouponSchema = new Schema({
   review: String,
   restaurantId: {
     type: ObjectId,
-    ref: 'Restaurant'
+    ref: 'User'
   },
   name: String,
   offerId: {
