@@ -23,28 +23,29 @@ router.get('/coupons', (req, res, next) => {
 });
 
 router.post('/getcoupon/:id', (req, res, next) => {
-  Offer.findById(req.params.id).then((offer) => {
-    const newCoupon = new Coupon({
-      user: req.session.currentUser._id,
-      status: false,
-      review: '',
-      restaurantId: offer.restaurant,
-      name: offer.name,
-      offerId: offer._id,
-      price: offer.price,
-      dealname: offer.dealname,
-      quantity: 1,
-      couponId: Coupon._id
-    });
+  Offer.findById(req.params.id)
+    .then((offer) => {
+      const newCoupon = new Coupon({
+        user: req.session.currentUser._id,
+        status: false,
+        review: '',
+        restaurantId: offer.restaurant,
+        name: offer.name,
+        offerId: offer._id,
+        price: offer.price,
+        dealname: offer.dealname,
+        quantity: 1,
+        couponId: Coupon._id
+      });
 
-    newCoupon.save().then((coupon) => {
-      res.redirect('/coupons');
-    });
-  }).catch(next);
+      return newCoupon.save();
+    })
+    .then(() => Offer.updateOne({ _id: req.params.id }, { $inc: { quantity: -1 } }))
+    .then(() => res.redirect('/coupons'))
+    .catch(next);
 });
 
 router.post('/upload', upload.single('photo'), (req, res, next) => {
-  throw new Error('THIS CODE NEVER GETS EXECUTED!!!');
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,

@@ -14,28 +14,26 @@ router.get('/review', (req, res, next) => {
     });
 });
 
-router.post('/review', (req, res, next) => {
+router.post('/review/:id', (req, res, next) => {
   const rate = req.body.rate;
   const comment = req.body.comment;
 
-  Coupon.find({ user: req.session.currentUser._id })
+  Coupon.findById(req.params.id)
     .then((coupon) => {
-      // Coupon only gets the first coupon?
-
       const newReview = new Review({
-        couponId: coupon[0]._id,
-        offerId: coupon[0].offerId,
-        restaurantId: coupon[0].restaurantId,
+        couponId: req.params.id,
+        offerId: coupon.offerId,
+        restaurantId: coupon.restaurantId,
         rate: rate,
         comment: comment,
-        name: coupon[0].name,
+        name: coupon.name,
         userId: req.session.currentUser._id
       });
 
-      newReview.save().then((review) => {
-        res.redirect('/review');
-      });
-    }).catch(next);
+      return newReview.save();
+    })
+    .then(() => res.redirect('/review'))
+    .catch(next);
 });
 
 router.get('/review-restaurant', (req, res, next) => {
