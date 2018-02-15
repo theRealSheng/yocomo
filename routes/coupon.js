@@ -44,6 +44,7 @@ router.post('/getcoupon/:id', (req, res, next) => {
 });
 
 router.post('/upload', upload.single('photo'), (req, res, next) => {
+  throw new Error('THIS CODE NEVER GETS EXECUTED!!!');
   const pic = new Picture({
     name: req.body.name,
     path: `/uploads/${req.file.filename}`,

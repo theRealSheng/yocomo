@@ -17,7 +17,6 @@
   </div>
 </div>
 
-
 <section>
   <h2>Upload your photo</h2>
   <form action="/upload" method="post" enctype="multipart/form-data">
@@ -44,14 +43,14 @@
         <p><%= coupon.price + ' €'%></p>
         <p><%= coupon.quantity + ' Coupons' %></p>
         
-          <% if (!coupon.status) { %><p>Not used</p>
+        <% if (!coupon.status) { %>
+          <p>Not used</p>
         <% } else { %>
           <p>Used</p>
-          <% } %>
+        <% } %>
       </div>
     </div>
 
-    </p>
     <button class="use-coupon">Click to use</button>
     <button class="btn btn-warning review-btn">+ Add Review</button>
     <form class="review-container" style="display:none" action="/review" method="post">
@@ -72,6 +71,6 @@
       </div>
     </form>
   </div>
-  <% }) %>
+<% }); %>
 
 <script src="/javascripts/create-review.js"></script>

@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -20,7 +21,7 @@ const app = express();
 // set databse
 
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/yocomo', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
