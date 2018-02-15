@@ -4,9 +4,9 @@
     </div>
 
 <% reviews.forEach(review => { %>
-  <div>
+  <div class="container">
+  <div class="offers-container">
     Coupon ID: <%= review.couponId %>
-  </div>
   <div>
     Restaurant: <%= review.name %>
   </div>
@@ -16,7 +16,8 @@
   <div>
     User Comment: <%= review.comment %>
   </div>
-<br>
+</div>
+</div>
 <%});%>
 
 
