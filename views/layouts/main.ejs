@@ -19,44 +19,44 @@
         <%  if (!user){ %>
         <div class="col-6">
           <div class="menu-item">
-            <a href="/auth/signup" >Signup</a>
+            <a href="/auth/signup" class="link">Signup</a>
           </div>
         </div>
         <div class="col-6">
           <div class="menu-item">
-            <a href="/auth/login" >Login</a>
+            <a href="/auth/login" class="link">Login</a>
           </div>
         </div>
         <% } %>
         <% if (user){ %> 
         <div class="col-3">
           <div class="menu-item">
-            <a href="/offers">Offers</a>
+            <a href="/offers" class="link">Offers</a>
           </div>
         </div>
         <% if (user.role === "BUYER"){ %>
         <div class="col-3">
           <div class="menu-item">
-            <a href="/coupons">Dashboard</a>
+            <a href="/coupons" class="link">Dashboard</a>
           </div>
         </div>
         <% }else { %>
         <div class="col-3">
           <div class="menu-item">
-            <a href="/my-offers">Dashboard</a>
+            <a href="/my-offers" class="link">Dashboard</a>
           </div>
         </div>
         <% } %>
         <% if (user.role === "BUYER"){ %>
         <div class="col-3">
           <div class="menu-item">
-            <a href="/review">My reviews</a>
+            <a href="/review" class="link">Reviews</a>
           </div>
         </div>
         <% }else { %>
         <div class="col-3">
           <div class="menu-item">
-              <a href="/review-restaurant">My reviews</a>
+              <a href="/review-restaurant" class="link">My reviews</a>
           </div>
         </div>
         <% } %>
@@ -65,7 +65,7 @@
         <div class="col-3">
           <div class="menu-item">
             <form method="post" action="/auth/logout">
-              <button class="btn-logout">Logout</button>
+              <button class="btn-logout" class="link">Logout</button>
             </form>
           </div>
           </div>
@@ -79,13 +79,15 @@
 <%- body%>
 
 <footer>
-  <div class="bg-warning white">
+  <div class="site-footer">
+    <div class="container">
     <% if (user) { %>
       <span class="copyright">
         &copy; Ironhack 2018 - Josep Salvat & Sheng Hu %>
       </span>
   <% } %> 
   </div>
+</div>
 </footer>
 
 </body>

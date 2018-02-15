@@ -35,7 +35,13 @@ h2{
  
   color: black;
 }
-
+.link {
+  display: block;
+  
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+}
 .row:first-child{
   border-bottom: 1px solid black;
 }
@@ -145,7 +151,7 @@ p{
 }
 .menu-item{
   background:none;
-  margin-top: 1vh;
+  
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 8vh;
@@ -197,9 +203,7 @@ a:hover:before, .btn-logout:hover:before {
   padding-left: 2vw;
   margin-left: 1vw;
 }
-form{
-margin-bottom: 0!important;
-}
+
 .title-page-deg{
   background: linear-gradient(to left, rgb(224, 224, 224) , #ffc107);
  padding-left: 2vh;
@@ -227,17 +231,24 @@ margin-bottom: 0!important;
   width: 55vw;
   padding-top: 1vh;
 }
+.site-footer{
+  background: #ffc107;
+  padding: 5vw auto;
+  height:5vh;
+}
 
 /* ---- components ---- */
 
  .btn-logout{
-  height: 5vh;
-  width: 10vw;
+  
   border: none;
   color: rgb(0, 0, 0);
-  background:NONE;
-  margin-bottom: 6vh;
+  width: 20vw;
+  height: 3vw;
   cursor: pointer;
+  
+  
+  background: #ffc107;
 }
 
 .review-btn{
