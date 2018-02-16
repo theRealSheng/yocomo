@@ -80,8 +80,16 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
   });
 });
 
-router.post('/useCoupon', (req, res, next) {
-  
-})
+router.post('/useCoupon/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  };
+
+  Coupon.findByIdAndUpdate(req.params.id, { status: true }, {new: true})
+    .then((coupon) => {
+      res.redirect('/coupons');
+    })
+    .catch(next);
+});
 
 module.exports = router;

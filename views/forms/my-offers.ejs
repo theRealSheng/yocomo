@@ -2,92 +2,6 @@
   <p class="title-pages">My Dashboard</p>
 </div>
 <div class="container">
-<<<<<<< HEAD
-  <div class ="offers-container">
-  
-    <button class="btn-success little" id="create-btn">+ Create</button>
-    <form id="offer-container" style="display:none" action="/my-offers" method="POST">
-      <div class="offer-form">
-        <label for="dealName">Coupon Name:</label>
-        <input type="text" name="dealName">
-      </div>
-      <div class="offer-form">
-        <label for="price">Price for Offer:</label>
-        <input type="number" name="price">
-      </div>
-      <div class="offer-form">
-        <label for="quantity">Quantity of Deals Available: </label>
-        <input type="number" name="quantity">
-      </div>
-      <div class="create">
-        <input type="submit" value="Create">
-      </div>
-    </form>
-
-
-  <!-- here goes the list of my offers -->
-
-  <div class="offer-wrapper">
-    <% offers.forEach((offer)=> { %>
-      <div class="offer-single">
-        <h4>
-          <%= offer.name %>
-        </h4>
-        <p>
-          Deal: <%= offer.dealname %>
-          Price: <%= offer.price %>
-        </p>
-        <p>
-          Quantity left: <%= offer.quantity %>
-        </p>
-      </div>
-      <% }); %>
-||||||| merged common ancestors
-  <div class ="offers-container">
-  
-    <button class="btn-success little" id="create-btn">+ Create</button>
-    <form id="offer-container" style="display:none" action="/my-offers" method="POST">
-      <div class="offer-form">
-        <label for="dealName">Coupon Name:</label>
-        <input type="text" name="dealName">
-      </div>
-      <div class="offer-form">
-        <label for="price">Price for Offer:</label>
-        <input type="number" name="price">
-      </div>
-      <div class="offer-form">
-        <label for="quantity">Quantity of Deals Available: </label>
-        <input type="number" name="quantity">
-      </div>
-      <div class="create">
-        <input type="submit" value="Create">
-      </div>
-    </form>
-
-
-  <!-- here goes the list of my offers -->
-
-  <div class="offer-wrapper">
-    <% offers.forEach((offer)=> { %>
-      <div class="offer-single">
-        <h4>
-          <%= offer.name %>
-        </h4>
-        <p>
-          Deal:
-          <%= offer.dealname %>
-        </p>
-        <p>
-          Price:
-          <%= offer.price %>
-        </p>
-        <p>
-          Quantity left:
-          <%= offer.quantity %>
-        </p>
-      </div>
-      <% }); %>
-=======
     <div class="main-create">
        
 Create New Offer <button id="create-btn">Create</button>
@@ -111,7 +25,6 @@ Create New Offer <button id="create-btn">Create</button>
 
   <div class="form-group">
     <input type="submit" class="btn-success" value="Create">
->>>>>>> 9f2f1e525ebb80666fcb8a5f391e6b73401b08e8
   </div>
 
 </form>
