@@ -19,6 +19,7 @@ h2{
   margin-top: 20vh;
   text-align: center;
   font-size: 10em;
+  height: 100vh;
 }
 .main-signuplogin{
   background: rgb(230, 230, 230);
@@ -40,6 +41,10 @@ h2{
   padding: 2vh 3vw;
   border: 1px solid rgb(36, 180, 0);
 
+}
+
+.menu-item form{
+  margin: 0;
 }
 .menu-item-logsign a:link{
  
@@ -322,4 +327,8 @@ margin:auto;
 .review-btn2{
   margin: 2vh auto;
 
+}
+
+.menu-item .btn-logout {
+  padding-top: 1.5vh;
 }

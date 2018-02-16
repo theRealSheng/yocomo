@@ -17,6 +17,7 @@
     <p>Email:  <%= user.email%> </p>
   </div>
 </div>
+<% if (!data) { %>
   <div class="container-profile flex-column">
     <h2>Upload your photo</h2>
     <form action="/upload" method="post" enctype="multipart/form-data">    
@@ -27,7 +28,7 @@
     </div>
     </form>
 </div>
-
+<% }; %>
      
     
 </div>
