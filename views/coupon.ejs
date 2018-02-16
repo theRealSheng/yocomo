@@ -1,7 +1,7 @@
 <div class="title-page-deg">
   <p class="title-pages">My Dashboard</p>
 </div>
-<h2>My profile</h2>
+<h2 class="copyright">My profile</h2>
 <div="container">
 <div class="container-profile">
   <div class="profile-pic">
@@ -17,16 +17,23 @@
     <p>Email:  <%= user.email%> </p>
   </div>
 </div>
-</div>
-
-<section>
-  <h2>Upload your photo</h2>
-  <form action="/upload" method="post" enctype="multipart/form-data">
+  <div class="profile-pic">
+    <h2>Upload your photo</h2>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        
     <input type="text" name="name">
     <input type="file" name="photo">
     <input type="submit" value="Save">
-  </form>
-</section>
+  
+      </form>
+
+    
+
+</div>
+
+     
+    
+</div>
 
 <% coupons.forEach(coupon => { %>
  <div class="container">
@@ -55,9 +62,10 @@
     </div>
 
     <form action="/useCoupon/<%=coupon._id%>" method="post">
+      Coupon #:
       <button class="use-coupon">
          <% if (coupon.status) { %>
-          Coupon #: <%= coupon._id %>
+          <%= coupon._id %>
          <% } else { %>
           Click to use
           <%}; %>

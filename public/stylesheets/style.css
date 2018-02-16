@@ -238,11 +238,18 @@ a:hover:before, .btn-logout:hover:before {
   margin-left: 10vw;
   /* border: 1px solid black; */
  }
+ .use-coupon{
+  text-align: center;
+  width: 18vw;
+  height: 3vw;
+  margin: auto;
+ }
 .container-profile{
   display: flex;
-  margin: auto;
+  margin: 10vh auto;
   border: 1px solid black;
   width: 60vw;
+  text-align: center;
 }
 .img-profile{
   max-height: 100vh;
