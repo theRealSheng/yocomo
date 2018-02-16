@@ -30,7 +30,16 @@ h2{
   padding: 10px;
   border: 1px solid black;
 }
+.main-create{
+  background: rgb(230, 230, 230);
+  text-align: center;
+  margin:8vh auto;
+  border-radius: 10px;
+  max-width: 50%;
+  padding: 2vh 3vw;
+  border: 1px solid rgb(36, 180, 0);
 
+}
 .menu-item-logsign a:link{
  
   color: black;
@@ -80,6 +89,8 @@ table{
 }
 .little{
   width: 10vw;
+ 
+
 }
 .title-pages{
   font-size: 2em;
