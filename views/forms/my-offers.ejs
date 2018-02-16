@@ -35,8 +35,9 @@ Create New Offer <button id="create-btn">Create</button>
 
 
 
-<div class="container">
+
     <% offers.forEach((offer, id)=> { %>
+  <div class="container">
     <div class ="offers-container">
       <b><%= id + 1 %></b><div class="rest-info">
           <div class="offer-div">
@@ -49,10 +50,12 @@ Create New Offer <button id="create-btn">Create</button>
             <p><%= offer.price + ' €'%></p>
             <p><%= offer.quantity + ' Coupons' %></p>
           </div>
+        
         </div>
     </div>
-    <% }); %>
+    
 </div>
+<% }); %> 
 
 
 

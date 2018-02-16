@@ -22,7 +22,8 @@ h2{
 }
 .main-signuplogin{
   background: rgb(230, 230, 230);
-  
+  max-width: 60vw;
+  min-width: 60vw;
   
   text-align: center;
   margin:8vh auto;
@@ -120,7 +121,7 @@ p{
 
 .offers-container p{
   margin: 0px;
-
+  
 }
 
 /* ---- layout ---- */
@@ -130,12 +131,13 @@ p{
 }
 .result-div{
   width: 40vw;
+  
   /* border: 1px solid black; */
   text-align: right;
  
 }
 .rest-info{
-  width: 80vw;
+  
   display: flex;
   flex-direction: row;
   padding-left: 10vw;
@@ -154,6 +156,8 @@ p{
   display: flex;
   flex-direction: column;
   padding: 2vh;
+  max-width: 50%;
+  min-width: 70%;
 }
 .offers-container:hover{
   box-shadow:0px 0px 0px 2px black inset;
@@ -216,12 +220,14 @@ a:hover:before, .btn-logout:hover:before {
   margin-top: 2vh;
   padding-left: 2vw;
   margin-left: 1vw;
+  
 }
 
 .title-page-deg{
   background: linear-gradient(to left, rgb(224, 224, 224) , #ffc107);
  padding-left: 2vh;
  width: 80vw;
+ max-width: 50%;
  margin: 5vh auto;
  border-radius: 10px;
 }
@@ -234,6 +240,9 @@ a:hover:before, .btn-logout:hover:before {
  }
 .container-profile{
   display: flex;
+  margin: auto;
+  border: 1px solid black;
+  width: 60vw;
 }
 .img-profile{
   max-height: 100vh;
@@ -249,7 +258,9 @@ a:hover:before, .btn-logout:hover:before {
   background: #ffc107;
   padding: 5vw auto;
   height:5vh;
-}
+  bottom: 0px;
+  margin: 18vh auto 0vh;
+  }
 
 /* ---- components ---- */
 
