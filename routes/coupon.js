@@ -11,9 +11,9 @@ const Picture = require('../models/picture');
 const upload = multer({ dest: './public/uploads/' });
 
 router.get('/coupons', (req, res, next) => {
-  if (req.session.currentUser.role !== 'RESTAURANT') {
-    return res.redirect('/coupons');
-  }
+  // if (req.session.currentUser.role !== 'RESTAURANT') {
+  //   return res.redirect('/coupons');
+  // }
 
   if (!req.session.currentUser) {
     return res.redirect('/auth/login');
@@ -31,9 +31,9 @@ router.get('/coupons', (req, res, next) => {
 });
 
 router.post('/getcoupon/:id', (req, res, next) => {
-  if (req.session.currentUser.role !== 'RESTAURANT') {
-    return res.redirect('/coupons');
-  }
+  // if (req.session.currentUser.role !== 'RESTAURANT') {
+  //   return res.redirect('/coupons');
+  // }
 
   if (!req.session.currentUser) {
     return res.redirect('/auth/login');

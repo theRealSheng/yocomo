@@ -21,9 +21,9 @@ router.get('/offers', (req, res, next) => {
 });
 
 router.get('/my-offers', (req, res, next) => {
-  if (req.session.currentUser.role !== 'BUYER') {
-    return res.redirect('/my-offers');
-  }
+  // if (req.session.currentUser.role !== 'BUYER') {
+  //   return res.redirect('/my-offers');
+  // }
 
   if (!req.session.currentUser) {
     return res.redirect('/auth/login');
@@ -36,9 +36,9 @@ router.get('/my-offers', (req, res, next) => {
 });
 
 router.post('/my-offers', (req, res, next) => {
-  if (req.session.currentUser.role !== 'BUYER') {
-    return res.redirect('/my-offers');
-  }
+  // if (req.session.currentUser.role !== 'BUYER') {
+  //   return res.redirect('/my-offers');
+  // }
 
   if (!req.session.currentUser) {
     return res.redirect('/auth/login');
