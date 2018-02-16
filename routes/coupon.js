@@ -80,4 +80,8 @@ router.post('/upload', upload.single('photo'), (req, res, next) => {
   });
 });
 
+router.post('/useCoupon', (req, res, next) {
+  
+})
+
 module.exports = router;

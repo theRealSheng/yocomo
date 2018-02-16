@@ -54,7 +54,13 @@
       </div>
     </div>
 
-    <button class="use-coupon">Click to use</button>
+    <form action="/useCoupon" method="post">
+      <button class="use-coupon">
+         <% if (coupon.status) { %>
+          <%= coupon._id %>
+         <% }; >
+      </button>
+    </form>
     <button class="btn btn-warning review-btn">+ Add Review</button>
     <form class="review-container" style="display:none" action="/review/<%=coupon._id%>" method="post">
       <div class="form-reviews">
