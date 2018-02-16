@@ -10,7 +10,7 @@ html {
 
 /* ---- typography ---- */
 h2{
-  margin-left: 6vh;
+  /* margin-left: 6vh; */
 }
 .copyright{
   text-align: center;
@@ -156,8 +156,8 @@ p{
   display: flex;
   flex-direction: column;
   padding: 2vh;
-  max-width: 50%;
-  min-width: 70%;
+  max-width: 800px;
+  
 }
 .offers-container:hover{
   box-shadow:0px 0px 0px 2px black inset;
@@ -227,16 +227,29 @@ a:hover:before, .btn-logout:hover:before {
   background: linear-gradient(to left, rgb(224, 224, 224) , #ffc107);
  padding-left: 2vh;
  width: 80vw;
- max-width: 50%;
+ max-width: 800px;
  margin: 5vh auto;
  border-radius: 10px;
+}
+#file {
+  width: 152px;
+  overflow:hidden;
+}
+.flexit{
+  display: flex;
+  flex-direction: column;
+  max-width: 152px;
+margin:auto;
 }
 .profile-pic{
   
   height: 20vh;
   width: 30vw;
-  margin-left: 10vw;
   /* border: 1px solid black; */
+ }
+ .flex-column{
+   display: flex;
+   flex-direction: column;
  }
  .use-coupon{
   text-align: center;
@@ -248,9 +261,25 @@ a:hover:before, .btn-logout:hover:before {
 .container-profile{
   display: flex;
   margin: 10vh auto;
-  border: 1px solid black;
-  width: 60vw;
+  /* border: 1px solid black; */
+  
+  max-width: 800px;
   text-align: center;
+}
+.compl{
+  background: #c599ff;
+  border: none;
+  color: black;
+  border-bottom: 4px solid #9f38ff;
+  border-radius: 5px;
+}
+.compl:hover{
+  background: #b683fa;
+  border: none;
+  border-bottom: 1px solid #9f38ff;
+  color: black;
+  cursor: pointer;
+  margin:auto;
 }
 .img-profile{
   max-height: 100vh;
@@ -261,6 +290,7 @@ a:hover:before, .btn-logout:hover:before {
   height: 17vh;
   width: 55vw;
   padding-top: 1vh;
+  padding-left: 2vw;
 }
 .site-footer{
   background: #ffc107;

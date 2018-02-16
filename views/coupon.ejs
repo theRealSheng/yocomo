@@ -2,7 +2,7 @@
   <p class="title-pages">My Dashboard</p>
 </div>
 <h2 class="copyright">My profile</h2>
-<div="container">
+<div class="container">
 <div class="container-profile">
   <div class="profile-pic">
     <% data.pictures.forEach((picture) => { %>
@@ -17,12 +17,14 @@
     <p>Email:  <%= user.email%> </p>
   </div>
 </div>
-  <div class="profile-pic">
+  <div class="container-profile flex-column">
     <h2>Upload your photo</h2>
     <form action="/upload" method="post" enctype="multipart/form-data">    
     <input type="text" name="name">
-    <input type="file" name="photo">
-    <input type="submit" value="Save">
+    <div class="flexit">
+      <input id="file" type="file" name="photo">
+      <input type="submit" value="Save">
+    </div>
     </form>
 </div>
 
@@ -57,9 +59,9 @@
       </div>
     </div>
 
-    <form action="/useCoupon/<%=coupon._id%>" method="post">
+    <form action="/useCoupon/<%=coupon._id%>" class="copyright" method="post">
       <p>Coupon #:</p> 
-      <button class="use-coupon">
+      <button class="btn-primary compl">
          <% if (coupon.status) { %>
           <% const one = coupon.id.slice(0,coupon.id.length/2); %>
           <% const two = coupon.id.slice(coupon.id.length/2); %>
