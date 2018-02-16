@@ -78,6 +78,9 @@ table{
   text-align: center;
   margin: 3vh auto;
 }
+.little{
+  width: 10vw;
+}
 .title-pages{
   font-size: 2em;
   font-weight: bolder;
